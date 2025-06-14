@@ -2,15 +2,15 @@ import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import React, { useState } from 'react';
 import {
-    Alert,
-    KeyboardAvoidingView,
-    Platform,
-    SafeAreaView,
-    ScrollView,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View
+  Alert,
+  KeyboardAvoidingView,
+  Platform,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View
 } from 'react-native';
 
 interface FormData {
@@ -287,7 +287,7 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
             {/* Terms */}
             <View className="mt-6">
               <Text className="text-center text-sm text-gray-600">
-                By creating an account, you agree to our{' '}
+                By creating an account, you agree to our{' '} 
                 <Text className="text-blue-600 font-medium">Terms of Service</Text>
                 {' '}and{' '}
                 <Text className="text-blue-600 font-medium">Privacy Policy</Text>
