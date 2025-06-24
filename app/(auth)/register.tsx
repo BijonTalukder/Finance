@@ -58,9 +58,10 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
     const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
     if (!formData.phone.trim()) {
       newErrors.phone = 'Phone number is required';
-    } else if (!phoneRegex.test(formData.phone.replace(/\s/g, ''))) {
-      newErrors.phone = 'Please enter a valid phone number';
-    }
+    } 
+    // else if (!phoneRegex.test(formData.phone.replace(/\s/g, ''))) {
+    //   newErrors.phone = 'Please enter a valid phone number';
+    // }
 
     // Password validation
     if (!formData.password) {
@@ -105,7 +106,7 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
         'Success',
         'Registration successful!',
         // [{ text: 'OK', onPress: () => navigation.goBack() }]
-        router.push("/dashboard/dashboard")
+        router.push("/login")
       );
     } catch (error) {
       Alert.alert('Error', 'Registration failed. Please try again.');

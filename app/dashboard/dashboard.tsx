@@ -2,13 +2,13 @@ import { Ionicons } from '@expo/vector-icons';
 import { router, useNavigation } from 'expo-router';
 import React, { useEffect, useState } from 'react';
 import {
-    Alert,
-    RefreshControl,
-    SafeAreaView,
-    ScrollView,
-    Text,
-    TouchableOpacity,
-    View
+  Alert,
+  RefreshControl,
+  SafeAreaView,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View
 } from 'react-native';
 
 interface ExpenseData {
@@ -86,7 +86,7 @@ const HomeDashboard: React.FC = () => {
       title: 'Add Expense',
       icon: 'add-circle-outline',
       color: 'bg-blue-500',
-      onPress: () => router.push('/dashboard/add-expense/index')
+      onPress: () => router.push('/dashboard/add-expense')
     },
     {
       id: 2,
