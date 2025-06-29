@@ -93,7 +93,7 @@ const HomeDashboard: React.FC = () => {
       title: 'View Summary',
       icon: 'analytics-outline',
       color: 'bg-purple-500',
-      onPress: () => navigation.navigate('ExpenseSummary' as never)
+      onPress: () => navigation.navigate('/dashboard/DueReceiveReport' as never)
     },
     {
       id: 3,
