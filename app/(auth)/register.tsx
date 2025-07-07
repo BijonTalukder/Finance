@@ -15,13 +15,13 @@ import {
 
 interface FormData {
   name: string;
-  phone: string;
+  email: string;
   password: string;
 }
 
 interface FormErrors {
   name?: string;
-  phone?: string;
+  email?: string;
   password?: string;
 }
 
@@ -36,7 +36,7 @@ interface RegisterProps {
 const Register: React.FC<RegisterProps> = ({ navigation }) => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
-    phone: '',
+    email: '',
     password: ''
   });
   
@@ -56,8 +56,8 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
 
     // Phone validation
     const phoneRegex = /^[\+]?[1-9][\d]{0,15}$/;
-    if (!formData.phone.trim()) {
-      newErrors.phone = 'Phone number is required';
+    if (!formData.email.trim()) {
+      newErrors.email = 'Phone number is required';
     } 
     // else if (!phoneRegex.test(formData.phone.replace(/\s/g, ''))) {
     //   newErrors.phone = 'Please enter a valid phone number';
@@ -105,8 +105,8 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
       Alert.alert(
         'Success',
         'Registration successful!',
-        // [{ text: 'OK', onPress: () => navigation.goBack() }]
-        router.push("/login")
+        [{ text: 'OK', onPress: () =>  router.push("/login")  }]
+      
       );
     } catch (error) {
       Alert.alert('Error', 'Registration failed. Please try again.');
@@ -189,14 +189,14 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
               {/* Phone Input */}
               <View>
                 <Text className="text-sm font-medium text-gray-700 mb-2">
-                  Phone Number
+                Email
                 </Text>
                 <View className={`border rounded-xl px-4 py-3 ${
-                  errors.phone ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-gray-50'
+                  errors.email ? 'border-red-500 bg-red-50' : 'border-gray-200 bg-gray-50'
                 }`}>
                   <TextInput
-                    value={formData.phone}
-                    onChangeText={(value) => handleInputChange('phone', value)}
+                    value={formData.email}
+                    onChangeText={(value) => handleInputChange('email', value)}
                     placeholder="Enter your phone number"
                     placeholderTextColor="#9CA3AF"
                     className="text-base text-gray-900"
@@ -204,9 +204,9 @@ const Register: React.FC<RegisterProps> = ({ navigation }) => {
                     autoCorrect={false}
                   />
                 </View>
-                {errors.phone && (
+                {errors.email && (
                   <Text className="text-red-500 text-sm mt-1 ml-1">
-                    {errors.phone}
+                    {errors.email}
                   </Text>
                 )}
               </View>

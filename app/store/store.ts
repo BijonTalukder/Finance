@@ -48,12 +48,12 @@ export const useAuthStore = create<AuthState>((set) => ({
     }
   },
 
-  register: async (name, phone, password) => {
+  register: async (name, email, password) => {
     set({ isLoading: true, error: null })
     try {
       const response = await axios.post(`${baseUrl}/auth/register`, {
         name,
-        phone,
+        email,
         password,
         
       })
